@@ -1,0 +1,11 @@
+$back-color: indianred;
+
+.red-background {
+  background-color: $back-color;
+}
+
+img {
+  width: 200px;
+}
+
+img:hover {filter: blur(5px) grayscale(80%);}
