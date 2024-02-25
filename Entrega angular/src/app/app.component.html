@@ -1,0 +1,11 @@
+<ng-container *ngIf="!isLoggedIn()">
+  <app-publicheader></app-publicheader>
+</ng-container>
+<ng-container *ngIf="isLoggedIn()">
+  <app-privateheader></app-privateheader>
+</ng-container>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+
+<app-footer></app-footer>

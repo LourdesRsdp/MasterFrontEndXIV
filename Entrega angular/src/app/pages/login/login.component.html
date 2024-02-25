@@ -1,0 +1,19 @@
+
+<div class="container" [class.wrongLogin]="wrongLogin">
+    <form #loginForm="ngForm">
+        <div class="duy">
+            <label class="label">Username: </label>
+            <input name="username" [(ngModel)]="user.username" required email #username="ngModel" placeholder="master@lemoncode.net">
+            <div *ngIf="username.invalid && username.touched">
+                <div *ngIf="username.errors?.required">Username required</div>
+                <div *ngIf="username.errors?.email">Username must be an email</div>
+            </div>
+        </div>
+        <div>
+            <label class="label">Password: </label>
+            <input name="password" [(ngModel)]="user.password" required #password="ngModel" placeholder="12345678">
+            <div *ngIf="password.invalid && password.touched">Password required</div>
+        </div>
+        <button class="enter-button" [disabled]="loginForm.invalid" (click)="submit()">Submit</button>
+    </form>
+</div>

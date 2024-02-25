@@ -1,0 +1,43 @@
+<div class="grid-container-galley">
+  <div class="selectedImage">
+    <img [src]="selectedImage?.src" [style.width.px]="selectedImage?.width" />
+  </div>
+
+  <div class="imageList">
+    <div *ngFor="let image of images" (click)="selectImage(image)" class="lilcontainer">
+      <img
+        [ngStyle]="{
+          'border':
+            selectedImage && image.id == selectedImage.id
+              ? '3px solid white'
+              : 'none'
+        }"
+        class="imageListStyle"
+        [id]="image.id"
+        [src]="image.src"
+        [alt]="image.title"
+      />
+    </div>
+  </div>
+
+  <div class="buttons">
+    <button mat-fab color="black" (click)="previousImage()" >
+      <mat-icon>arrow_back_ios</mat-icon>
+    </button>
+    <button mat-fab color="black" (click)="nextImage()" >
+      <mat-icon>arrow_forward_ios</mat-icon>
+    </button>
+    <button mat-fab color="black" (click)="increaseSize()" >
+      <mat-icon>zoom_in</mat-icon>
+    </button>
+    <button mat-fab color="black" (click)="decreaseSize()" >
+      <mat-icon>zoom_out</mat-icon>
+    </button>
+    <button mat-fab color="black" (click)="playSlideshow()"[disabled]="playPressed" >
+      <mat-icon>play_arrow</mat-icon>
+    </button>
+    <button mat-fab color="black" (click)="stopSlideshow()"[disabled]="stopPressed" >
+      <mat-icon>stop</mat-icon>
+    </button>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+.home-container {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    height: 100vh; /* Establece el contenedor al 100% de la altura de la ventana */
+  }
+  
+  h1 {
+    font-family: 'Arial', sans-serif; /* Puedes cambiar la fuente a tu gusto */
+    font-size: 36px; /* Tamaño de la fuente */
+    font-variant: small-caps;
+    color: #333; /* Color del texto */
+  }

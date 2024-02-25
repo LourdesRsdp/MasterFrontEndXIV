@@ -1,0 +1,14 @@
+<button
+  mat-icon-button
+  [matMenuTriggerFor]="menu"
+  aria-label="Example icon button with a menu icon"
+>
+  <mat-icon>menu</mat-icon>
+</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item (click)="dashboard()">Dashboard</button>
+  <button mat-menu-item (click)="gallery()">Gallery</button>
+  <button mat-menu-item (click)="crud()">CRUD</button>
+  <button mat-menu-item (click)="profile()">Profile</button>
+  <button mat-menu-item (click)="logout()">Logout</button>
+</mat-menu>

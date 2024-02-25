@@ -1,0 +1,46 @@
+.grid-container-galley {
+  display: grid;
+  gap: 10px;
+  min-height: 50vh;
+}
+
+.selectedImage {
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-row: 1 / 10;
+  grid-column: 1 / 2;
+}
+
+.imageList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  grid-row: 10 / 12;
+  grid-column: 1 / 2;
+  gap: 10px;
+}
+.lilcontainer {
+  
+  width: 10%;
+}
+.imageListStyle {
+  width: 100%;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor:pointer;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  grid-row: 12 / 13;
+  grid-column: 1 / 2;
+  gap: 50px;
+}
