@@ -1,0 +1,67 @@
+@use "themeA" as A;
+/* @use "themeB" as A; */
+
+h3 {
+  text-align: center;
+  -webkit-text-stroke: 0.5px black;
+  font-size: 40px;
+}
+
+body {
+  background-color: beige;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 600px;
+  grid-template-rows: 100px 100px 100px 100px;
+  text-align: center;
+  justify-content: center;
+  gap: A.$gap;
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid black;
+  border-radius: 20px;
+  -moz-border-radius: A.$moz-radius;
+  -webkit-border-radius: A.$webkit-radius;
+}
+
+header {
+  font-family: A.$primary-font;
+}
+.base {
+  grid-row: 1/2;
+  background-color: A.$primary-color;
+}
+.important {
+  grid-row: 2/3;
+  background-color: A.$secundary-color;
+}
+.warning {
+  grid-row: 3/4;
+  background-color: A.$tertiary-color;
+}
+.box- {
+  grid-row: 4/5;
+  background-color: A.$quatiary-color;
+}
+.text {
+  font-family: A.$primary-font;
+}
+.text- {
+  font-family: A.$secundary-font;
+}
+.label-container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 30px;
+}
+.box-shadow {
+  height: 40px;
+  margin-top: 10px;
+  box-shadow: A.$box-style;
+}
