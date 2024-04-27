@@ -1,10 +1,12 @@
-03.Modulo Bundling
-02.Modulo JSTS/02 Lenguajes/dist
-01.Layout Basico/dist
-01.Layout Basico/Ejercicio 1/dist
-01.Layout Basico/Ejercicio 1/src/dist
-01.Layout Basico/Ejercicio 2/dist
-01.Layout Basico/Ejercicio 2/src/dist
-01.Layout Basico/Ejercicio 3/dist
-01.Layout Basico/Ejercicio 3/src/dist
-04.React/node_modules
+3 Bundling/node_modules
+3 Bundling/dist
+2 Lenguajes/02 Lenguajes/dist
+1 Layout Basico/dist
+1 Layout Basico/Ejercicio 1/dist
+1 Layout Basico/Ejercicio 1/src/dist
+1 Layout Basico/Ejercicio 2/dist
+1 Layout Basico/Ejercicio 2/src/dist
+1 Layout Basico/Ejercicio 3/dist
+1 Layout Basico/Ejercicio 3/src/dist
+4.1 React/node_modules
+4.2 Angular/node_modules
