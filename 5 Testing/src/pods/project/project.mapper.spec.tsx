@@ -101,7 +101,22 @@ describe('project mapper component specs', () => {
 
         // Assert
         expect(result).toEqual(expectedVmEmployeeSummary);
-
     });
+
+    it('should return array one mapped when mapEmployeeSummaryListFromApiToVm feeds array one item', () => {
+
+        // Arrange
+        const apiEmployeeSummary: apiModel.EmployeeSummary[] = [{ id: "1", employeeName: "John" }];
+
+        // Act
+        const result: viewModel.EmployeeSummary[] = mapEmployeeSummaryListFromApiToVm(apiEmployeeSummary);
+
+        const expectResult: viewModel.EmployeeSummary[] = [{ id: "1", employeeName: "John" }];
+
+        // Assert
+        expect(result).toEqual(expectResult)
+    });
+
+    
 
 });

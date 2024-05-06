@@ -52,8 +52,6 @@ describe('confirmation dialog component specs', () => {
                 labels={labels}
                 children={''}
             >
-
-
             </ConfirmationDialogComponent>
         )
 

@@ -30,3 +30,9 @@ export const mapProjectFromApiToVm = (
       }
     : viewModel.createEmptyProject();
 };
+
+
+export const mapMemberFromApiToVm = (employeeSummary: apiModel.EmployeeSummary): viewModel.EmployeeSummary => ({
+  id: employeeSummary.id.toString(),
+  employeeName: employeeSummary.employeeName.toString()
+})
