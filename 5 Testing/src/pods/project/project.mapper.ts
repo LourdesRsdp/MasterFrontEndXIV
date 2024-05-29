@@ -2,13 +2,22 @@ import { mapToCollection } from 'common/mappers';
 import * as apiModel from './api/project.api-model';
 import * as viewModel from './project.vm';
 
-const mapEmployeeSummaryFromApiToVm = (
+export const mapEmployeeSummaryFromApiToVm = (
   employeeSummary: apiModel.EmployeeSummary
-): viewModel.EmployeeSummary => ({
-  ...employeeSummary,
-});
+): viewModel.EmployeeSummary => {
+  if (!employeeSummary) {
+    return null;
+  }else  if (Object.keys(employeeSummary).length === 0) {
+    return null;
+  } else {
+    return {
+    id: employeeSummary.id || '',
+    employeeName: employeeSummary.employeeName || ''
+  }};
+};
 
-const mapEmployeeSummaryListFromApiToVm = (
+
+export const mapEmployeeSummaryListFromApiToVm = (
   employeeSummary: apiModel.EmployeeSummary[]
 ): viewModel.EmployeeSummary[] =>
   mapToCollection(employeeSummary, es => mapEmployeeSummaryFromApiToVm(es));
@@ -23,3 +32,9 @@ export const mapProjectFromApiToVm = (
       }
     : viewModel.createEmptyProject();
 };
+
+
+export const mapMemberFromApiToVm = (employeeSummary: apiModel.EmployeeSummary): viewModel.EmployeeSummary => ({
+  id: employeeSummary.id.toString(),
+  employeeName: employeeSummary.employeeName.toString()
+})
