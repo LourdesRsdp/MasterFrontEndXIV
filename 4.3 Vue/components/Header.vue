@@ -1,11 +1,11 @@
 <template>
   <nav class="nav">
     <img
-      src="C:\Users\duy_9\Desktop\Repositorios\Master Front-End\Entrega Vue\appList\src\placa_pn.png"
+      src="../src/placa_pn.png"
       alt="police"
       class="logo"
     />
-    <div><h1>Hacking Collective</h1></div>
+    <div><h1>Hacking Collective Directory</h1></div>
   </nav>
 </template>
 

@@ -5,11 +5,11 @@ export const useMemberListStore = defineStore('cart', {
   state: () => ({
     items: {} as Member[],
     
-    org: {} as string,
+    org: 'lemoncode' as string,
   }),
   getters: {
-    allItems: (state) => Object.values(state.items),
-    getOrg: (state) => Object.values(state.org)
+    allItems: (state) => state.items,
+    getOrg: (state) => state.org
   },
   actions: {
     setItems(items: Member[]) {

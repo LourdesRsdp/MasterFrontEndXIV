@@ -7,11 +7,13 @@ export const mapEmployeeSummaryFromApiToVm = (
 ): viewModel.EmployeeSummary => {
   if (!employeeSummary) {
     return null;
-  }
-  return {
+  }else  if (Object.keys(employeeSummary).length === 0) {
+    return null;
+  } else {
+    return {
     id: employeeSummary.id || '',
     employeeName: employeeSummary.employeeName || ''
-  };
+  }};
 };
 
 
