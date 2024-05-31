@@ -2,24 +2,26 @@ import * as apiModel from './api/character.api-model';
 import * as viewModel from './character.vm';
 
 export const mapCharacterFromApiToVm = (
-  hotel: apiModel.Character
+  character: apiModel.Character
 ): viewModel.Character => ({
-  ...hotel,
-  id: hotel.id,
-  name: hotel.name,
-  description: hotel.shortDescription,
-  rating: hotel.hotelRating,
-  address: hotel.address1,
-  city: hotel.city,
+  ...character,
+  id: character.id,
+  name: character.name,
+  status: character.status,
+  species: character.species,
+  gender: character.gender,
+  image: character.image,
+  origin: character.origin.name
 });
 
-export const mapCharacterFromVmToApi = (hotel: viewModel.Character): apiModel.Character =>
-  (({
-    ...hotel,
-    id: hotel.id,
-    name: hotel.name,
-    shortDescription: hotel.description,
-    hotelRating: hotel.rating,
-    address1: hotel.address,
-    city: hotel.city,
-  } as unknown) as apiModel.Character);
+export const mapCharacterFromVmToApi = (character: viewModel.Character): apiModel.Character =>
+(({
+  ...character,
+  id: character.id,
+  name: character.name,
+  status: character.status,
+  species: character.species,
+  gender: character.gender,
+  image: character.image,
+  origin: character.origin
+} as unknown) as apiModel.Character);

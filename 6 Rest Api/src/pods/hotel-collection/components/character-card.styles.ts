@@ -10,7 +10,7 @@ export const container = css`
 `;
 
 export const card = css`
-  transition: transform 0.3s ease;
+  transition: transform 0.9s ease;
   width: 300px; 
   height: 500px; 
   display: flex;
@@ -18,7 +18,7 @@ export const card = css`
   justify-content: space-between;
 
   &:hover {
-    transform: scale(1.05); 
+    transform: scale(1.1); 
     box-shadow: 0px 5px 15px rgba(7, 146, 200, 0.8)
   }
 `;
