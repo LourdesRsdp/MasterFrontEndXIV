@@ -33,7 +33,7 @@
 import { ref, onMounted, computed } from 'vue';
 import { memberService } from "~/services/members";
 import type { Member } from "~/types";
-import { useMemberListStore } from '~/composables/useMemberListStore.ts';
+import { useMemberListStore } from '~/composables/useMemberListStore';
 import Header from '~/components/Header.vue';
 
 const memberListStore = useMemberListStore();
@@ -41,7 +41,7 @@ const company = ref<string>('Lemoncode');
 const members = ref<Member[]>([]);
 const error = ref<string>("");
 
-const organisation = computed(() => memberListStore.getOrg());
+const organisation = computed(() => memberListStore.getOrg);
 
 onMounted(() => {
   loadMembers();
