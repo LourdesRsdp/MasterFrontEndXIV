@@ -23,7 +23,10 @@ describe('project mapper component specs', () => {
     it('should return null when feeds empty employeeSummary', () => {
 
         // Arrange
-        const apiEmployeeSummary: apiModel.EmployeeSummary = {};
+        const apiEmployeeSummary: apiModel.EmployeeSummary = {
+            id: "",
+            employeeName: ""
+        };
         const expectedVmEmployeeSummary: viewModel.EmployeeSummary = null;
 
         // Act
