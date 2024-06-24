@@ -4,18 +4,16 @@ import * as api from './api';
 import { createEmptyCharacter, Character } from './character.vm';
 import { mapCharacterFromApiToVm, mapCharacterFromVmToApi } from './character.mappers';
 import { CharacterComponent } from './character.component';
+import { linkRoutes } from 'core/router';
 
 export const CharacterContainer: React.FunctionComponent = () => {
   const [character, setCharacter] = React.useState<Character>(createEmptyCharacter());
-  React.useEffect(() => {
-  }, [character]);
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
 
   const handleLoadCharacter = async () => {
     try {
       const apiCharacter = await api.getCharacterById(id);
-      
       const characterVm = mapCharacterFromApiToVm(apiCharacter);
       setCharacter(characterVm);
     } catch (error) {
@@ -24,11 +22,25 @@ export const CharacterContainer: React.FunctionComponent = () => {
     }
   };
 
+  const handleSave = async (updatedCharacter: Character) => {
+    try {
+      const apiCharacter = mapCharacterFromVmToApi(updatedCharacter);
+      await api.saveCharacter(apiCharacter);
+      setCharacter(updatedCharacter);
+    } catch (error) {
+      console.error('Error saving character:', error);
+    }
+  };
+  
   React.useEffect(() => {
     if (id) {
       handleLoadCharacter();
     }
   }, [id]);
 
-  return <CharacterComponent character={character} />;
+  function handleEdit(id: string): void {
+    throw new Error('Function not implemented.');
+  }
+
+  return <CharacterComponent character={character} onEdit={() => handleEdit(id)} onSave={handleSave} />;
 };

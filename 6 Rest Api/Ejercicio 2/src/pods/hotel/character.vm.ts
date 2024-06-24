@@ -7,7 +7,7 @@ export interface Character {
   type: string;
   gender: string;
   origin: string ;
-  bestSentences: string;
+  bestSentences:string[];
 }
 
 export const createEmptyCharacter = (): Character => ({
@@ -19,5 +19,5 @@ export const createEmptyCharacter = (): Character => ({
   type: '',
   gender: '',
   origin: '',
-  bestSentences: '',
+  bestSentences:[],
 });

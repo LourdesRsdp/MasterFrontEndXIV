@@ -12,7 +12,7 @@ export const container = css`
 export const card = css`
   transition: transform 0.9s ease;
   width: 300px; 
-  height: 500px; 
+  height: 550px; 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -24,7 +24,8 @@ export const card = css`
 `;
 
 export const media = css`
-  height: 225px; 
+  height: 300px; 
+  margin-bottom: 10px;
 `;
 
 export const content = css`
@@ -61,3 +62,13 @@ export const gender = css`
   overflow: hidden;
   text-overflow: ellipsis;
 `;
+
+export const origin = css`
+  font-size: 1em;
+  color: #aaa;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+`;
+
+

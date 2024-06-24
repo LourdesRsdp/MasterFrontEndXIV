@@ -3,7 +3,7 @@ import { theme } from 'core/theme';
 
 export const root = css`
   & > :nth-child(n + 2) {
-    margin-top: 2rem;
+    margin-top: rem;
   }
 `;
 

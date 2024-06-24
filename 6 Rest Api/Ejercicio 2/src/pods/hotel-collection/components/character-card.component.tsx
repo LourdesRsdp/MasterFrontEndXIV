@@ -20,11 +20,11 @@ interface Props {
 
 export const CharacterCard: React.FunctionComponent<Props> = (props) => {
   const { character, onEdit, onDelete } = props;
-  
+
 
 
   return (
-    
+
     <div className={classes.container}>
       <Link to={`/character/${character.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
         <Card className={classes.card}>
@@ -38,28 +38,18 @@ export const CharacterCard: React.FunctionComponent<Props> = (props) => {
                 image={character.image}
                 className={classes.media}
               />
-              <Typography variant="subtitle1" gutterBottom className={classes.species}>
+              <Typography variant="subtitle1" gutterBottom className={classes.species}>Species:
                 {character.species}
               </Typography>
-              <Typography variant="subtitle1" gutterBottom className={classes.type}>
-                {character.type}
-              </Typography>
-              <Typography variant="subtitle1" gutterBottom className={classes.gender}>
+              <Typography variant="subtitle1" gutterBottom className={classes.gender}>Gender: 
                 {character.gender}
               </Typography>
-              {<Typography variant="subtitle1" gutterBottom>
-              {character.origin}
-            </Typography>}
+              {<Typography variant="subtitle1" gutterBottom className={classes.origin}>Origin: 
+                {character.origin}
+              </Typography>}
+             
             </div>
           </CardContent>
-          <CardActions className={classes.actions}>
-            <IconButton onClick={() => onEdit(character.id)}>
-              <EditIcon />
-            </IconButton>
-            <IconButton onClick={() => onDelete(character.id)}>
-              <DeleteIcon />
-            </IconButton>
-          </CardActions>
         </Card>
       </Link>
     </div>

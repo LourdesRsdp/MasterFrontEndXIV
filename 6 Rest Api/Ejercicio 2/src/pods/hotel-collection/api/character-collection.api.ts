@@ -7,7 +7,7 @@ export const getCharacterCollection = async (): Promise<CharacterEntityApi[]> =>
   try {
     const response = await axios.get(characterCollection);
     
-    return response.data.results;
+    return response.data;
   } catch (error) {
     
     throw error;
